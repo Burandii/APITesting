@@ -17,11 +17,13 @@ namespace WebApplication3.Controllers
             new Product { Id = 3, Name = "Hammer", Category = "Hardware", Price = 16.99M }
         };
 
+        [HttpGet]
         public IEnumerable<Product> GetAllProducts()
         {
             return products;
         }
 
+        [HttpGet]
         public IHttpActionResult GetProduct(int id)
         {
             var product = products.FirstOrDefault((p) => p.Id == id);
